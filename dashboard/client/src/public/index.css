@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --panda-primary: #2D3E50;
+  --panda-secondary: #E67E22;
+  --moon-glow: #F39C12;
+  --heart-pink: #E91E63;
+  --heart-red: #F44336;
+  --cloud-blue: #3498DB;
+  --success-green: #27AE60;
+  --danger-red: #E74C3C;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Starry night background animation */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite;
+}
+
+/* Heart floating animation */
+@keyframes float-heart {
+  0% {
+    transform: translateY(0) translateX(0) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-600px) translateX(var(--float-x)) scale(1);
+    opacity: 0;
+  }
+}
+
+.floating-heart {
+  position: fixed;
+  animation: float-heart 4s ease-out forwards;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* Panda bounce animation */
+@keyframes panda-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.panda-happy {
+  animation: panda-bounce 0.6s ease-in-out infinite;
+}
+
+/* Cloud float animation */
+@keyframes float-cloud {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.price-cloud {
+  animation: float-cloud 3s ease-in-out infinite;
+}
+
+/* Rocket fuel fill animation */
+@keyframes fuel-fill {
+  0% { transform: scaleY(0); }
+  100% { transform: scaleY(1); }
+}
+
+.fuel-bar {
+  transform-origin: bottom;
+  animation: fuel-fill 0.5s ease-out;
+}
+
+/* Glow effect for moon */
+@keyframes moon-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(243, 156, 18, 0.5); }
+  50% { box-shadow: 0 0 40px rgba(243, 156, 18, 0.8); }
+}
+
+.moon-glow {
+  animation: moon-glow 2s ease-in-out infinite;
+}
+
+/* Pulse animation for winning trades */
+@keyframes pulse-success {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.success-pulse {
+  animation: pulse-success 0.5s ease-in-out;
+}
+
+/* Shake animation for losing trades */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.panda-sad {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .price-cloud {
+    font-size: 0.8rem;
+  }
+}
