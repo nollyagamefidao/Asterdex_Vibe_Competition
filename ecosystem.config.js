@@ -2,7 +2,7 @@ module.exports = {
   apps: [{
     name: 'asterdex-bot',
     script: 'maravilla-with-dashboard.js',
-    cwd: '/root/asterdex-bot',
+    cwd: '/yourpath/asterdex-bot',
     interpreter: 'node',
     instances: 1,
     autorestart: true,
@@ -11,14 +11,14 @@ module.exports = {
     env: {
       NODE_ENV: 'production'
     },
-    error_file: '/root/asterdex-bot/logs/error.log',
-    out_file: '/root/asterdex-bot/logs/out.log',
+    error_file: '/yourpath/asterdex-bot/logs/error.log',
+    out_file: '/yourpath/asterdex-bot/logs/out.log',
     log_date_format: 'YYYY-MM-DD HH:mm:ss Z'
   }, {
     name: 'dashboard',
     script: 'npm',
     args: 'start',
-    cwd: '/root/CryptoCompass',
+    cwd: '/yourpath/CryptoCompass',
     instances: 1,
     autorestart: true,
     watch: false,
@@ -27,8 +27,8 @@ module.exports = {
       NODE_ENV: 'production',
       PORT: '5000'
     },
-    error_file: '/root/CryptoCompass/logs/error.log',
-    out_file: '/root/CryptoCompass/logs/out.log',
+    error_file: '/yourpath/CryptoCompass/logs/error.log',
+    out_file: '/yourpath/CryptoCompass/logs/out.log',
     log_date_format: 'YYYY-MM-DD HH:mm:ss Z'
   }]
 };
