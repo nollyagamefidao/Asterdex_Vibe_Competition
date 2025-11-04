@@ -1,0 +1,32 @@
+{
+  "name": "asterdex-trading-bot",
+  "version": "3.0.0",
+  "description": "Advanced Asterdex Trading Bot with Multi-Position Management, AI Integration, and API Server",
+  "main": "maravilla-with-dashboard.js",
+  "scripts": {
+    "start": "node maravilla-with-dashboard.js",
+    "api": "node api-server.js",
+    "start-all": "pm2 start api-server.js --name bot-api && pm2 start ecosystem.config.js",
+    "stop": "pm2 stop all",
+    "restart": "pm2 restart all",
+    "logs": "pm2 logs",
+    "status": "pm2 status"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "twitter-api-v2": "^1.15.0",
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "trading",
+    "bot",
+    "asterdex",
+    "crypto",
+    "ai",
+    "api"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
